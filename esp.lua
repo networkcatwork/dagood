@@ -768,7 +768,7 @@ Options('ToggleKey', 'Toggle Key', Enum.KeyCode.F3, 1);
 Options('ChangeColors', SENTINEL_LOADED and 'Sentinel Unsupported' or 'Change Colors', function()
 	if SENTINEL_LOADED then return end
 
-	SubMenu:Show(GetMouseLocation(), 'Unnamed Colors', {
+	SubMenu:Show(GetMouseLocation(), 'Colors', {
 		{
 			Type = 'Color'; Text = 'Team Color'; Color = TeamColor;
 
@@ -864,7 +864,7 @@ function LineBox:Create(Properties)
 		Visible			= true;
 	}, Properties);
 
-	if shared.am_ic3 then -- sory just my preference, dynamic boxes will be optional in unnamed esp v2
+	if shared.am_ic3 then 
 		Box['OutlineSquare']= NewDrawing'Square'(Properties);
 		Box['Square'] 		= NewDrawing'Square'(Properties);
 	elseif QUAD_SUPPORTED_EXPLOIT then
@@ -1128,9 +1128,6 @@ local function SetImage(Drawing, Url)
     
 	if not IsSynapse then repeat wait() until Drawing.Loaded; end
 end
-
--- oh god unnamed esp needs an entire rewrite, someone make a better one pls im too lazy
--- btw the color picker was made seperately so it doesnt fit with the code of unnamed esp
 
 local function CreateDrawingsTable()
     local Drawings = { __Objects = {} };
@@ -1594,7 +1591,7 @@ function CreateMenu(NewPosition) -- Create Menu
 	Menu:AddMenuInstance('TopBarText', 'Text', {
 		Size 		= 25;
 		Position	= shared.MenuDrawingData.Instances.TopBarTwo.Position + V2New(25, 10);
-		Text		= 'Unnamed ESP';
+		Text		= 'Network Sense';
 		Color		= Colors.Secondary.Light;
 		Visible		= true;
 		Transparency= 1; 
