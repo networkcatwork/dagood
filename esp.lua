@@ -1997,7 +1997,7 @@ shared.UESP_InputEndedCon = UserInputService.InputEnded:Connect(function(input)
 	end
 end)
 
-local function CameraCon() -- unnamed esp v1 sucks
+local function CameraCon() 
 	workspace.CurrentCamera:GetPropertyChangedSignal'ViewportSize':Connect(function()
 		TracerPosition = V2New(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y - 135);
 	end);
