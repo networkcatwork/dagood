@@ -425,6 +425,18 @@ local NotificationCoroutine = coroutine.create(function()
     end)
 end)
 
+local ScriptHub = Window:MakeTab({
+    Name = "General",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+ScriptHub:AddButton({
+    Name = "Aimbot | Press E",
+    Default = false,
+    Callback = function(Value)
+        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/networkcatwork/dagood/main/TheHub.lua'))() end)   
+})
+
 coroutine.resume(NotificationCoroutine)
 
 OrionLib:Init()
