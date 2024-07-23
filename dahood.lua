@@ -1,10 +1,10 @@
 -- Dahood
-if game.PlaceId == 2788229376 then -- Game Check
+if game.PlaceId then -- Game Check
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))() -- Init
 local Window = OrionLib:MakeWindow({Name = "Network Sense | Dahood | Made By NetCat", HidePremium = false, IntroText = "Network Sense | Dahood | Made By NetCat", SaveConfig = true, ConfigFolder = "NetworkSettings"}) -- Init
 
 -- Visuals
-    local Visuals = Window:MakeTab({
+local Visuals = Window:MakeTab({
         Name = "Visual",
         Icon = "rbxassetid://4483345998",
         PremiumOnly = false
@@ -62,9 +62,9 @@ Extra:AddButton({
 
 -- General
 local General = Window:MakeTab({
-    Name = "General",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
+	Name = "General",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
 })
 General:AddButton({
     Name = "Aimbot | Press E",
@@ -199,8 +199,86 @@ end)
         })
     end    
 })
--- End of general
+General:AddButton({
+	Name = "TP to Player",
+	Callback = function()
+local player = game.Players.LocalPlayer
 
+local targetUsername = ""
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "TP to Player"
+gui.ResetOnSpawn = false
+gui.IgnoreGuiInset = true
+gui.DisplayOrder = 10
+gui.Parent = game.CoreGui
+
+local frame = Instance.new("Frame")
+frame.Name = "MainFrame"
+frame.Size = UDim2.new(0, 300, 0, 200)
+frame.Position = UDim2.new(0.5, -150, 0.5, -100) 
+frame.BackgroundColor3 = Color3.fromRGB(101, 7, 173) 
+frame.BorderSizePixel = 2
+frame.BorderColor3 = Color3.fromRGB(0, 0, 0) 
+frame.Parent = gui
+
+local closeButton = Instance.new("TextButton")
+closeButton.Name = "CloseButton"
+closeButton.Text = "X"
+closeButton.Size = UDim2.new(0, 20, 0, 20)
+closeButton.Position = UDim2.new(1, -20, 0, 0) 
+closeButton.TextColor3 = Color3.fromRGB(255, 0, 0) 
+closeButton.BackgroundColor3 = Color3.fromRGB(101, 7, 173)
+closeButton.BorderSizePixel = 0
+closeButton.Font = Enum.Font.SourceSansBold
+closeButton.TextSize = 14
+closeButton.Parent = frame
+
+local textBox = Instance.new("TextBox")
+textBox.Name = "Enter Username"
+textBox.PlaceholderText = "Enter username..."
+textBox.Text = ""
+textBox.Size = UDim2.new(0.8, 0, 0, 30)
+textBox.Position = UDim2.new(0.1, 0, 0.3, -15)
+textBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+textBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+textBox.BorderSizePixel = 2
+textBox.Parent = frame
+
+local updateButton = Instance.new("TextButton")
+updateButton.Name = "Teleport"
+updateButton.Text = "TP to Player"
+updateButton.Size = UDim2.new(0.8, 0, 0, 30)
+updateButton.Position = UDim2.new(0.1, 0, 0.7, -15)
+updateButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+updateButton.BackgroundColor3 = Color3.fromRGB(0, 120, 215) 
+updateButton.BorderSizePixel = 0
+updateButton.Font = Enum.Font.SourceSansBold
+updateButton.TextSize = 16
+updateButton.Parent = frame
+
+local function closeGUI()
+    gui:Destroy()
+end
+
+local function updateTargetAndMove()
+    targetUsername = textBox.Text
+    local players = game:GetService("Players")
+    local targetPlayer = players:FindFirstChild(targetUsername)
+    if targetPlayer then
+        player.Character:MoveTo(targetPlayer.Character.HumanoidRootPart.Position)
+    else
+        warn("Player not found with username:", targetUsername)
+    end
+end
+
+closeButton.MouseButton1Click:Connect(closeGUI)
+
+updateButton.MouseButton1Click:Connect(updateTargetAndMove)
+
+  	end    
+})
+-- End of General
 
 end
 OrionLib:Init()
