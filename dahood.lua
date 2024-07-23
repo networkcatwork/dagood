@@ -201,19 +201,6 @@ end)
 })
 -- End of general
 
--- ScriptHub
-local ScriptHub = Window:MakeTab({
-    Name = "General",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-ScriptHub:AddButton({
-    Name = "Aimbot | Press E",
-    Default = false,
-    Callback = function(Value)
-        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/networkcatwork/dagood/main/TheHub.lua'))() end)   
-})
--- End of ScriptHub
 
 end
 OrionLib:Init()
