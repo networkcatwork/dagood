@@ -1,5 +1,5 @@
 -- Dahood
-if game.PlaceId == 2788229376 then -- Game Check
+if game.PlaceId == 4483381587 then -- Game Check
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))() -- Init
 local Window = OrionLib:MakeWindow({Name = "Network Sense | Dahood | Made By NetCat", HidePremium = false, IntroText = "Network Sense | Dahood | Made By NetCat", SaveConfig = true, ConfigFolder = "NetworkSettings"}) -- Init
 
