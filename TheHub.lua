@@ -18,11 +18,11 @@ Scripts:AddButton({
         pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/networkcatwork/dagood/main/doors.lua'))() end)
   	end    
 })
-Scripts:AddButton({
-	Name = "Launch MM2 Script",
-	Callback = function()
-        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/networkcatwork/dagood/main/mm2.lua'))() end)
-  	end    
-})
+--  Scripts:AddButton({
+--	Name = "Launch MM2 Script",
+--	Callback = function()
+--        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/networkcatwork/dagood/main/mm2.lua'))() end)
+ -- 	end    
+-- }) 
 
 OrionLib:Init()
