@@ -56,7 +56,20 @@ Extra:AddButton({
             Image = "rbxassetid://4483345998",
             Time = 5
         })
-    end    
+    end   
+})
+Extra:AddButton({
+    Name = "DarkDex",
+    Default = false,
+    Callback = function(Value)
+        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/TacticalBFG/HelicityScripts/master/darkdex.lua'))() end)
+        OrionLib:MakeNotification({
+            Name = "DarkDex!",
+            Content = "DarkDex Activated!",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+    end   
 })
 -- End of Extra
 
@@ -77,6 +90,17 @@ General:AddButton({
             Image = "rbxassetid://4483345998",
             Time = 5
         })
+    end    
+})
+General:AddButton({
+    Name = "Infinite Money",
+    Default = false,
+    Callback = function(Value)
+        _G.Cash = "$999,777,771" 
+
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.MoneyText.Text = _G.Cash
+game:GetService("Players").LocalPlayer.Backpack.Wallet.Handle.BillboardGui.TextLabel.Text = _G.Cash
+game:GetService("Players").LocalPlayer.Backpack.Wallet.Handle.BillboardGui.TextLabel.Value = _G.Cash
     end    
 })
 General:AddButton({
