@@ -2,7 +2,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "Network Sense | Made By NetCat", HidePremium = false, IntroText = "Network Sense | Made By NetCat", SaveConfig = true, ConfigFolder = "NetworkSettings"}) -- Init
 
 local Scripts = Window:MakeTab({
-	Name = "Dahood",
+	Name = "Scripts",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -16,6 +16,12 @@ Scripts:AddButton({
 	Name = "Launch Doors Script",
 	Callback = function()
         pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/networkcatwork/dagood/main/doors.lua'))() end)
+  	end    
+})
+Scripts:AddButton({
+	Name = "Launch MM2 Script",
+	Callback = function()
+        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/networkcatwork/dagood/main/mm2.lua'))() end)
   	end    
 })
 
