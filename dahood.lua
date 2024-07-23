@@ -45,6 +45,12 @@ local Extra = Window:MakeTab({
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
+Visuals:AddButton({
+	Name = "X-ray | Press E",
+	Callback = function()
+      		pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/HeyGyt/xray/main/main"))() end)
+  	end    
+})
 Extra:AddButton({
     Name = "Admin",
     Default = false,
@@ -71,6 +77,62 @@ Extra:AddButton({
         })
     end   
 })
+Extra:AddButton({
+    Name = "Air Swmi",
+    Default = false,
+    Callback = function(Value)
+        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/HeyGyt/airswim/main/main'))() end)
+        OrionLib:MakeNotification({
+            Name = "Air Swim!",
+            Content = "Air Swim Activated!",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+    end   
+})
+Extra:AddButton({
+    Name = "Infinite Jump",
+    Default = false,
+    Callback = function(Value)
+        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/HeyGyt/infjump/main/main'))() end)
+        OrionLib:MakeNotification({
+            Name = "Infin Jump!",
+            Content = "Infinite Jump Activated!",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+    end   
+})
+Visuals:AddButton({
+    Name = "Full Bright",
+    Default = false,
+    Callback = function(value)
+        game:GetService("Lighting").Brightness = 2
+        game:GetService("Lighting").ClockTime = 14
+        game:GetService("Lighting").FogEnd = 100000
+        game:GetService("Lighting").GlobalShadows = false
+        game:GetService("Lighting").OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+        OrionLib:MakeNotification({
+            Name = "Full Bright!",
+            Content = "FullBright Activated!",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+    end
+})
+Extra:AddButton({
+    Name = "BTools",
+    Default = false,
+    Callback = function(Value)
+        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/HeyGyt/btools/main/main'))() end)
+        OrionLib:MakeNotification({
+            Name = "BTools!",
+            Content = "BTools Activated!",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+    end   
+})
 -- End of Extra
 
 -- General
@@ -80,12 +142,56 @@ local General = Window:MakeTab({
 	PremiumOnly = false
 })
 General:AddButton({
+	Name = "Fling",
+	Callback = function()
+	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_5wpM7bBcOPspmX7lQ3m75SrYNWqxZ858ai3tJdEAId6jSI05IOUB224FQ0VSAswH.lua.txt'),true))()
+  	end    
+})
+General:AddButton({
     Name = "Aimbot | Press E",
     Default = false,
     Callback = function(Value)
         pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/networkcatwork/dagood/main/aimbot.lua'))() end)
         OrionLib:MakeNotification({
             Name = "Aimbot!",
+            Content = "Press E to Activate!",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+    end    
+})
+General:AddButton({
+    Name = "NoClip | Press E NW!!!",
+    Default = false,
+    Callback = function(Value)
+        local player = game.Players.LocalPlayer
+        local mouse = player:GetMouse()
+        local runservice = game:GetService("RunService")
+        local noclip = false
+        
+        local msg = Instance.new("Message", player.PlayerGui)
+        msg.Text = "Noclip Script! Press on 'e' to noclip & 't' to destroy this message!"
+        
+        runservice.Stepped:Connect(function()
+            if noclip then
+                player.Character.Humanoid:ChangeState(11)
+            end
+        end)
+        
+        mouse.KeyDown:Connect(function(key)
+            if key == "t" then
+                msg:Destroy()
+            end
+        end)
+        
+        mouse.KeyDown:Connect(function(key)
+            if key == "e" then
+                noclip = true
+                player.Character.Humanoid:ChangeState(11)
+            end
+        end)
+        OrionLib:MakeNotification({
+            Name = "NoClip!",
             Content = "Press E to Activate!",
             Image = "rbxassetid://4483345998",
             Time = 5
